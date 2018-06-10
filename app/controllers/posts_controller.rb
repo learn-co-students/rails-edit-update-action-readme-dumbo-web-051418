@@ -11,6 +11,10 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
+	def edit
+		@post = Post.find_by(id: params[:id])
+	end
+
 	def create
 	  @post = Post.new
 	  @post.title = params[:title]
